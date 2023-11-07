@@ -9,7 +9,7 @@ This Dino need your help because he:
 - is running for his life
 
 1. Start the game
-2. Use the `keyword arrows` to move horizontally
+2. Use the `keyword arrows` to move jump
 3. You begin with `3 lives`
 4. You `lose` a life when you get hit by a meteor
 5. You `gain` a life when you eat tacos
