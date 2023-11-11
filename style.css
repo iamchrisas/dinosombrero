@@ -1,139 +1,134 @@
 * {
-    font-family: roboto;
+  font-family: roboto;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
-h1, h2 {
-    padding: 0;
-    margin: 0;
-    text-align: center;
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
 header {
-    width: 100vw;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+  width: 100vw;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
 }
 
 header > div {
-    display: flex;
+  display: flex;
 }
 
 .status-icon {
-    display: flex;
-    align-items: center;
-    margin: 0  15px;
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
 }
 
 .status-icon > div {
-    padding: 8px;
+  padding: 8px;
 }
 
 .dino > img {
-    margin: 0 15px;
-    padding: 50px;
+  margin: 0 15px;
+  padding: 50px;
 }
 
 .dino {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
 }
 
 .logo-img {
-    height: 200px;
+  height: 200px;
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 button {
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
 #rules {
-    padding-top: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#rules li{
-    padding: 4px;
+#rules li {
+  padding: 4px;
 }
 
 #game-container {
-    display: flex;
-    width: 100vw;
-    padding: 20px 0px;
-    justify-content: center;
-    /* visibility: hidden; */
-  }
-  
-  #game-screen {
-    display: none;
-    align-content: center;
-    padding: 20px 0px;
-    overflow: hidden;
-    position: relative;
-    background-image: url(./images/background-videogame4.jpeg);
-    background-size: cover;
-    animation: slide 5s linear infinite;
-  }
-  
+  display: flex;
+  width: 100vw;
+  padding: 20px 0px;
+  justify-content: center;
+}
+
+#game-background {
+  background-image: url("images/videogames-background6.jpeg");
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+#game-screen {
+  transform: scale(0.5);
+  background-size: cover;
+  background-image: url("images/background-videogame4.jpeg");
+  animation: slide 7s linear infinite;
+}
 
 #end-game {
-    height: auto;
-    background-image: url(./images/background-videogame4.jpeg);
+  height: auto;
+  background-image: url(images/videogames-background6.jpeg);
 }
 
 @keyframes slide {
-    0% {
-      background-position: 0 -1000px;
-    }
-    95% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 0 50px;
-    }
+  0% {
+    background-position: 1000px 0;
   }
-  
-  #game-end {
-    display: none;
+  100% {
+    background-position: 0px 0;
   }
-  
-  .arrows-img {
-    width: 150px;
-  }
-  
-  body button {
-    color: #FFF;
-    border-radius: 4px;
-    background: #039473;
-    font-size: 12px;
-    padding: 8px 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-  
-  button:hover {
-    cursor: pointer;
-    background-color: #01795E;
-  }
+}
+
+#game-end {
+  display: none;
+}
+
+.arrows-img {
+  width: 150px;
+}
+
+body button {
+  color: #fff;
+  border-radius: 4px;
+  background: #039473;
+  font-size: 12px;
+  padding: 8px 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #01795e;
+}
