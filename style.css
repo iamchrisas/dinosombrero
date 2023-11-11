@@ -77,16 +77,63 @@ button {
     padding: 4px;
 }
 
-#game-screen {
+#game-container {
     display: flex;
-    padding: 20px 0;
-    justify-content: center;
     width: 100vw;
-    height: auto;
-    background-color: yellow;
-}
+    padding: 20px 0px;
+    justify-content: center;
+    /* visibility: hidden; */
+  }
+  
+  #game-screen {
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(./images/background-videogame4.jpeg);
+    background-size: cover;
+    animation: slide 5s linear infinite;
+  }
+  
 
 #end-game {
     height: auto;
     background-image: url(./images/background-videogame4.jpeg);
 }
+
+@keyframes slide {
+    0% {
+      background-position: 0 -1000px;
+    }
+    95% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 50px;
+    }
+  }
+  
+  #game-end {
+    display: none;
+  }
+  
+  .arrows-img {
+    width: 150px;
+  }
+  
+  body button {
+    color: #FFF;
+    border-radius: 4px;
+    background: #039473;
+    font-size: 12px;
+    padding: 8px 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  button:hover {
+    cursor: pointer;
+    background-color: #01795E;
+  }
