@@ -4,42 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Dino Sombrero</title>
   </head>
   <body>
     <main>
+      <!-- The nav appear during all the screens -->
+      <header>
+        <div>
+          <!-- lives container -->
+          <div class="status-icon">
+            <span class="material-symbols-outlined">
+              favorite
+            </span>
+            <div id="lives">3</div>
+          </div>
+          <!-- score container -->
+          <div class="status-icon">
+            <h3>Score</h3>
+            <div id="score">0</div>
+          </div>
+        </div>
+        <h1>Dino Sombrero</h1>
+      </header>
       <!-- #game-intro is initially shown on the game start screen -->
       <div id="game-intro">
-        <img src="//" alt="" class="logo-img" />
-        <br />
-        <button id="start-button">Start Game</button>
-        <p>Use the left and right arrow to control the car!</p>
-        <img src="//" alt="" class="arrows-img" />
-      </div>
-
-      <div id="game-container">
-        <div>
-          <h2>Stats</h2>
-          <p>Score: <span id="score">0</span></p>
-          <p>Lives: <span id="lives">3</span></p>
+        <div class="dino">
+          <img src="./images/dinosaur-character.png" alt="green-dino" class="logo-img"/>
         </div>
+        <span class="buttons">
+          <button id="start-button">Start Game</button>
+          <button id="random-character">Choose Random character</button>
+        </span>
+        <span id="rules">
+            <h2>Instructions</h2>
+            <ol>
+              <li>You begin with 3 lives</li> 
+              <li>Meteors, hats and tacos come from right to left</li>
+              <li>You gain 1 point when you collect a hat</li>
+              <li>You gain a life when you eat a tacos</li>
+              <li>You lose a life when you get hit by a meteor</li>
+              <li>You win the game when you get to 50 points</li>
+              <li>It's gameOver when you run out of lives</li>
+              <li>Have fun!</li>
+            </ol>
+        </span>
+      </div> 
+      
+      <!-- #game-screen is set to active when the start game button is clicked -->
+      <div id="game-container">
         <!-- #game-screen is initially hidden using CSS style display: none -->
         <div id="game-screen"></div>
       </div>
 
-      <!-- #game-end is initially hidden using CSS style display: none -->
-      <div id="game-end">
-        <img src="//" alt="" class="logo-img" />
-        <h1>Game Over</h1>
-        <br />
-        <button id="restart-button">Restart</button>
+      <!-- #end-game screen defines the game over-->
+      <div id="end-game">
+        <div>
+          <div class="end-game-picture"></div>
+          <div class="end-game-text"></div>
+          <button id="restart-button">restart game</button>
+        </div>
       </div>
-    </main>
-
-    <script type="text/javascript" src="js/game.js"></script>
+        
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/player.js"></script>
-    <script type="text/javascript" src="js/obstacle.js"></script>
   </body>
 </html>
