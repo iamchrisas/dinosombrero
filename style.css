@@ -23,6 +23,11 @@ nav > h1 {
   margin-bottom: 0px;
 }
 
+nav > h4 {
+  text-align: end;
+  margin-right: 12px;
+}
+
 /* Icons */
 .status-icon {
   display: flex;
