@@ -494,9 +494,9 @@ class Taco {
   }
 
   move() {
-    // Move the taco left by 30px => the tacos go from right to left faster
-    this.right += 15;
-    // Move the taco down by 1px => the tacos go from top to bottom faster
+    // Move the taco left by 6px => the tacos go from right to left faster
+    this.right += 6;
+    // Move the taco down by 0px => the tacos go from top to bottom faster
     this.top += 0;
     // Update the taco's position on the screen
     this.updatePosition();
@@ -531,7 +531,7 @@ class Hat {
   }
 
   move() {
-    // Move the hat left by 40px => the hats go from right to left faster
+    // Move the hat left by 0px => the hats go from right to left faster
     this.right += 0;
     // Move the hat down by 1px => the hats go from top to bottom faster
     this.top += 1;
