@@ -14,4 +14,8 @@ This Dino need your help because he:
 
 Have fun!
 
-Game by Chris & Mayo
+### Game by Chris & Mayo
+
+https://github.com/iamchrisas
+
+https://github.com/mayo9704
