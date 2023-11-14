@@ -37,7 +37,6 @@
           </div>
         </div>
         <h1>DINO SOMBRERO</h1>
-        <h4>By Chris & Mayo</h4>
       </nav>
       <!-- #game-intro is initially shown on the game start screen -->
       <div id="game-intro">
@@ -64,11 +63,11 @@
       <div id="game-screen"></div>
       <!-- #game-end screen load when the player lose -->
       <div id="game-end">
-        <div>
-          <div class="game-end-picture"></div>
-          <div class="game-end-text"></div>
-          <button id="restart-button">Restart game</button>
-        </div>
+          <div class="game-end-picture">
+            <img src="./images/dino-game-over.jpeg" alt="">
+            <p>Oh, no! You lost the game, try again and collect 50 hats to win</p>
+            <button id="restart-button">Restart game</button>
+          </div>
       </div>
       <!-- #game-victory screen load  when the player win -->
       <div id="game-victory">
@@ -76,6 +75,10 @@
         <button id="replay-button">Play again</button>
       </div>
     </div>
+
+    <footer>
+      <h4>By Chris & Mayo</h4>
+    </footer>
     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

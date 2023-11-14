@@ -3,11 +3,12 @@
 }
 
 body {
-  margin-top: 0px;
+  margin: 0px;
 }
 
 /* Navbar */
 nav {
+  width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
@@ -80,10 +81,10 @@ button:hover {
   background-color: #01795e;
 }
 
-#restart-button {
+/* #restart-button {
   display: flex;
   justify-content: center;
-}
+} */
 
 #replay-button {
   display: flex;
@@ -118,6 +119,11 @@ button:hover {
   background-size: cover;
   background-image: url(images/background-videogame4.jpeg);
   animation: slide 7s linear infinite;
+  overflow:hidden;
+}
+
+#game-intro {
+  margin: 80px;
 }
 
 @keyframes slide {
@@ -133,10 +139,34 @@ button:hover {
 #game-end {
   display: none;
   width: 100vw;
-  height: 50vh;
+  padding: 180px;
+  font-weight: 800;
   background-size: cover;
-  justify-content: center;
   background-image: url(images/videogames-background6.jpeg);
+  background-size: cover;
+  text-align: center;
+}
+
+.game-end-picture {
+  background-color: white;
+  color: black;
+  width: 700px;
+  padding: 32px;
+  margin: 0 auto;
+}
+
+.game-end-picture > img {
+  width: 200px;
+  border-radius: 100px;
+}
+
+.game-end-picture {
+  background-color: white;
+  color: black;
+  margin: 0 auto;
+  padding: 24px;
+  width: 750px;
+  /* align-items: center; */
 }
 
 #game-victory {
@@ -152,4 +182,12 @@ button:hover {
   color: #fff;
   display: flex;
   justify-content: center;
+}
+
+footer {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.1);
+  padding-left: 12px;
 }
