@@ -86,10 +86,10 @@ button:hover {
   justify-content: center;
 } */
 
-#replay-button {
+/* #replay-button {
   display: flex;
   justify-content: center;
-}
+} */
 
 /* Rules */
 #rules {
@@ -172,7 +172,8 @@ button:hover {
 #game-victory {
   display: none;
   width: 100vw;
-  height: 50vh;
+  padding: 180px;
+  text-align: center;
   background-size: cover;
   justify-content: center;
   background-image: url(images/video-game-backg.jpeg);
