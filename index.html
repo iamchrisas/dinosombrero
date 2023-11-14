@@ -30,30 +30,30 @@
             <h3>🌮</h3>
             <div id="tacos">0</div>
           </div>
-          <!-- score container -->
-          <div class="status-icon">
-            <h3>Score</h3>
-            <div id="score">0</div>
-          </div>
         </div>
         <h1>DINO SOMBRERO</h1>
+         <!-- score container -->
+         <div class="status-icon" id="score-container">
+          <h3>Score</h3>
+          <div id="score">0</div>
+        </div>
       </nav>
       <!-- #game-intro is initially shown on the game start screen -->
       <div id="game-intro">
         <div class="dino">
           <img src="./images/dinosaur-character.png" alt="dino-img"/>
         </div>
+        <div id="rules">
+          <h2>Rules</h2>
+          <ol>
+            <li>Use the arrow keys to move</li>
+            <li>Avoid meteors and eat tacos to survive </li>
+            <li>Collect 50 hats to win</li>
+          </ol>
+        </div>
         <div class="buttons">
           <button id="start-button">Start Game</button>
           <!-- <button id="random-character">Choose Random character</button> -->
-        </div>
-        <div id="rules">
-            <h2>Rules</h2>
-            <ol>
-              <li>Use the arrow keys to move</li>
-              <li>Avoid meteors and eat tacos to survive </li>
-              <li>Collect 50 hats to win</li>
-            </ol>
         </div>
       </div> 
       
@@ -63,24 +63,33 @@
       <div id="game-screen"></div>
       <!-- #game-end screen load when the player lose -->
       <div id="game-end">
-          <div class="game-end-picture">
-            <img src="./images/dino-game-over.jpeg" alt="">
-            <p>Oh, no! You lost the game, try again and collect 50 hats to win</p>
-            <button id="restart-button">Restart game</button>
+        <div class="game-end-picture">
+          <img src="./images/dino-game-over.jpeg" alt="">
+            <p class="warcry">BOOOOOH</p>
+              <p class="warcry">Oh, no! You lost</p>
+              <p class="warcry">Your final score is:</p>
+              <p id="final-score">0</p>
+          <button id="restart-button">Try again</button>
+        </div>
           </div>
       </div>
       <!-- #game-victory screen load  when the player win -->
       <div id="game-victory">
         <div class="game-end-picture">
           <img src="./images/dino-game-over.jpeg" alt="">
-          <p>Great work! You collected 50 hats and help the dinosaur to survive!!</p>
+            <p class="warcry">WUJUU!</p>
+              <p class="warcry">You won, you collected 50 hats</p>
+              <p class="warcry">Your final score is:</p>
+              <p id="final-score">0</p>
           <button id="replay-button">Play again</button>
         </div>
       </div>
     </div>
 
     <footer>
-      <h4>By Chris & Mayo</h4>
+     <p>By</p>
+     <p><a href="https://github.com/iamchrisas">Jurassic Guide - Chris</a></p>
+     <p><a href="https://github.com/mayo9704">Jurassic Guide - Mayo</a></p>
     </footer>
     <script type="text/javascript" src="js/script.js"></script>
   </body>

@@ -84,6 +84,7 @@ class Game {
     this.height = 600;
     // new Obstacle()
     this.obstacles = [];
+    this.obstaclesTwo = [];
     this.hats = [];
     this.tacos = [];
     this.lives = 3;
@@ -152,9 +153,47 @@ class Game {
         }
       }
     }
+
+    // Return the new positions of the obstacles to update the game
+    for (let j = 0; j < this.obstaclesTwo.length; j++) {
+      const obstacleTwo = this.obstaclesTwo[j];
+      if (obstacleTwo) {
+        obstacleTwo.move();
+
+        // If the dino collides with an obstacle
+        if (this.player.didCollide(obstacleTwo)) {
+          // Remove the obstacle element from the DOM
+          obstacleTwo.element.remove();
+
+          // Remove obstacle object from the array
+          this.obstaclesTwo.splice(j, 1);
+
+          // Reduce player's lives by 1
+          this.lives--;
+          document.getElementById("lives").textContent = this.lives;
+
+          // Update the counter variable to account for the removed obstacle
+          j--;
+        } else if (obstacleTwo.bottom > this.height) {
+          // Increase the score by 1
+          this.score++;
+          document.getElementById("score").textContent = this.score;
+
+          // Remove the obstacle from the DOM
+          obstacleTwo.element.remove();
+
+          // Remove obstacle object from the array
+          this.obstaclesTwo.splice(j, 1);
+
+          // Update the counter variable to account for the removed obstacle
+          j--;
+        }
+      }
+    }
+
     // Return the new positions of the tacos to update the game
-    for (let j = 0; j < this.tacos.length; j++) {
-      const taco = this.tacos[j];
+    for (let k = 0; k < this.tacos.length; k++) {
+      const taco = this.tacos[k];
       if (taco) {
         taco.move();
 
@@ -164,7 +203,7 @@ class Game {
           taco.element.remove();
 
           // Remove taco object from the array
-          this.tacos.splice(j, 1);
+          this.tacos.splice(k, 1);
 
           // Increase player's lives by 1
           this.lives++;
@@ -179,23 +218,23 @@ class Game {
           document.getElementById("score").textContent = this.score;
 
           // Update the counter variable to account for the removed taco
-          j--;
+          k--;
         } else if (taco.right > this.width) {
           // Remove the taco from the DOM
           taco.element.remove();
 
           // Remove taco object from the array
-          this.tacos.splice(j, 1);
+          this.tacos.splice(k, 1);
 
           // Update the counter variable to account for the removed taco
-          j--;
+          k--;
         }
       }
     }
 
     // Return the new positions of the hats to update the game
-    for (let k = 0; k < this.hats.length; k++) {
-      const hat = this.hats[k];
+    for (let l = 0; l < this.hats.length; l++) {
+      const hat = this.hats[l];
       if (hat) {
         hat.move();
 
@@ -205,7 +244,7 @@ class Game {
           hat.element.remove();
 
           // Remove hat object from the array
-          this.hats.splice(k, 1);
+          this.hats.splice(l, 1);
 
           // Increase the hats by 1
           this.hats.length++;
@@ -216,24 +255,30 @@ class Game {
           document.getElementById("score").textContent = this.score;
 
           // Update the counter variable to account for the removed hat
-          k--;
+          l--;
         } else if (hat.top > this.height) {
           // Remove the hat from the DOM
           hat.element.remove();
 
           // Remove hat object from the array
-          this.hats.splice(k, 1);
+          this.hats.splice(l, 1);
 
           // Update the counter variable to account for the removed hat
-          k--;
+          l--;
         }
       }
     }
 
     // Create a new obstacle based on a random probability
     // when there is no other obstacles on the screen
-    if (Math.random() > 0.98 && this.obstacles.length < 1) {
+    if (Math.random() > 0.992 && this.obstacles.length < 1) {
       this.obstacles.push(new Obstacle(this.gameScreen));
+    }
+
+    // Create a new obstacleTwo based on a random probability
+    // when there is no other obstacles on the screen
+    if (Math.random() > 0.9 && this.obstaclesTwo.length < 1) {
+      this.obstaclesTwo.push(new ObstacleTwo(this.gameScreen));
     }
 
     // Create a new taco based on a random probability
@@ -273,6 +318,9 @@ class Game {
     // remove the obstacles from the screen
     this.obstacles.forEach((obstacle) => obstacle.element.remove());
 
+    // remove the obstaclesTwo from the screen
+    this.obstaclesTwo.forEach((obstacleTwo) => obstacleTwo.element.remove());
+
     // remove the tacos from the screen
     this.tacos.forEach((taco) => taco.element.remove());
 
@@ -284,6 +332,9 @@ class Game {
 
     // Hide game screen
     this.gameScreen.style.display = "none";
+
+    //Show the final score
+    document.getElementById("final-score").textContent = this.score;
 
     // Show end game screen
     this.gameEndScreen.style.display = "block";
@@ -297,6 +348,9 @@ class Game {
     // remove the obstacles from the screen
     this.obstacles.forEach((obstacle) => obstacle.element.remove());
 
+    // remove the obstaclesTwo from the screen
+    this.obstaclesTwo.forEach((obstacleTwo) => obstacleTwo.element.remove());
+
     // remove the tacos from the screen
     this.tacos.forEach((taco) => taco.element.remove());
 
@@ -308,6 +362,9 @@ class Game {
 
     // Hide game screen
     this.gameScreen.style.display = "none";
+
+    //Show the final score
+    document.getElementById("final-score").textContent = this.score;
 
     // Show game victory screen
     this.gameVictoryScreen.style.display = "block";
@@ -386,6 +443,22 @@ class Player {
     }
   }
 
+  didCollide(obstacleTwo) {
+    const playerRect = this.element.getBoundingClientRect();
+    const obstacleTwoRect = obstacleTwo.element.getBoundingClientRect();
+
+    if (
+      playerRect.left < obstacleTwoRect.right &&
+      playerRect.right > obstacleTwoRect.left &&
+      playerRect.top < obstacleTwoRect.bottom &&
+      playerRect.bottom > obstacleTwoRect.top
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   didCollide(taco) {
     const playerRect = this.element.getBoundingClientRect();
     const tacoRect = taco.element.getBoundingClientRect();
@@ -419,7 +492,7 @@ class Player {
   }
 }
 
-// obstacle mechanic
+// obstacle coming from the top mechanic
 
 class Obstacle {
   constructor(gameScreen) {
@@ -435,7 +508,7 @@ class Obstacle {
     this.height = 100;
     this.element = document.createElement("img");
 
-    this.element.src = "images/meteorite-illustrations-free-png.webp";
+    this.element.src = "images/meteorite.png";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -456,6 +529,47 @@ class Obstacle {
     this.right += 3;
     // Move the obstacle down by 10px => the obstacles go from top to bottom faster
     this.top += 5;
+    // Update the obstacle's position on the screen
+    this.updatePosition();
+  }
+}
+
+// obstacle coming from the bottom mechanic
+class ObstacleTwo {
+  constructor(gameScreen) {
+    this.gameScreen = gameScreen;
+
+    // Summon the obstacle on the x axis
+    this.right = Math.floor(Math.random() * 500 + 30);
+
+    // Summon the obstacle on the y axis
+    this.bottom = 0;
+
+    this.width = 100;
+    this.height = 100;
+    this.element = document.createElement("img");
+
+    this.element.src = "images/meteoriteTwo copy.png";
+    this.element.style.position = "absolute";
+    this.element.style.width = `${this.width}px`;
+    this.element.style.height = `${this.height}px`;
+    this.element.style.bottom = `${this.bottom}px`;
+    this.element.style.right = `${this.right}px`;
+
+    this.gameScreen.appendChild(this.element);
+  }
+
+  updatePosition() {
+    // Update the obstacle's position based on the properties right and top
+    this.element.style.right = `${this.right}px`;
+    this.element.style.bottom = `${this.bottom}px`;
+  }
+
+  move() {
+    // Move the obstacle left by 3px => the obstacles go from right to left faster
+    this.right += 3;
+    // Move the obstacle down by 10px => the obstacles go from top to bottom faster
+    this.bottom += 5;
     // Update the obstacle's position on the screen
     this.updatePosition();
   }
