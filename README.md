@@ -12,7 +12,7 @@ This Dino need your help because he:
 2. Avoid meteors and eat tacos to survive
 3. Collect 50 hats to win
 
-Have fun!
+Have fun: https://iamchrisas.github.io/dinosombrero/
 
 ### Game by Chris & Mayo
 
