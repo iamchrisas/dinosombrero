@@ -32,16 +32,16 @@ window.onload = function () {
       // Update player's directionX and directionY based on the key pressed
       switch (key) {
         case "ArrowLeft":
-          game.player.directionX = -4;
+          game.player.directionX = -6;
           break;
         case "ArrowUp":
-          game.player.directionY = -4;
+          game.player.directionY = -6;
           break;
         case "ArrowRight":
-          game.player.directionX = 4;
+          game.player.directionX = 6;
           break;
         case "ArrowDown":
-          game.player.directionY = 4;
+          game.player.directionY = 6;
           break;
       }
     }
@@ -74,14 +74,14 @@ class Game {
     //  new Player()
     this.player = new Player(
       this.gameScreen,
-      10,
-      550,
+      0,
+      0,
       100,
       100,
       "./images/dinosaur-character.png"
     );
-    this.width = 1000;
-    this.height = 600;
+    this.width = 1500;
+    this.height = 780;
     // new Obstacle()
     this.obstacles = [];
     this.obstaclesTwo = [];
@@ -270,32 +270,32 @@ class Game {
     }
 
     // Create a new obstacle based on a random probability
-    // when there is no other obstacles on the screen
-    if (Math.random() > 0.992 && this.obstacles.length < 1) {
+    // when there is less than 1 obstacle on the screen
+    if (Math.random() > 0.9 && this.obstacles.length < 1) {
       this.obstacles.push(new Obstacle(this.gameScreen));
     }
 
     // Create a new obstacleTwo based on a random probability
-    // when there is no other obstacles on the screen
-    if (Math.random() > 0.9 && this.obstaclesTwo.length < 1) {
+    // when there is less than 1 obstacle screen
+    if (Math.random() > 0.997 && this.obstaclesTwo.length < 1) {
       this.obstaclesTwo.push(new ObstacleTwo(this.gameScreen));
     }
 
     // Create a new taco based on a random probability
     // when there is no other tacos on the screen
-    // Math.random() > 0.998 means that a new taco will be created
+    // Math.random() > 0.995 means that a new taco will be created
     // only when the random number generated is greater than 0.995
-    // giving you a 0.2% probability
-    if (Math.random() > 0.998) {
+    // giving you a 0.5% probability
+    if (Math.random() > 0.995) {
       this.tacos.push(new Taco(this.gameScreen));
     }
 
     // Create a new hat based on a random probability
     // when there are no other hats on the screen
-    // Math.random() > 0.995 means that a new hat will be created
+    // Math.random() > 0.99 means that a new hat will be created
     // only when the random number generated is greater than 0.997
-    // giving you a 0.5% probability
-    if (Math.random() > 0.995) {
+    // giving you a 1% probability
+    if (Math.random() > 0.99) {
       this.hats.push(new Hat(this.gameScreen));
     }
 
@@ -327,14 +327,14 @@ class Game {
     // Remove the hats from the screen
     this.hats.forEach((hat) => hat.element.remove());
 
+    //Show the final score
+    document.getElementById("end-score").textContent = this.score;
+
     // cancel the execution of gameLoop()
     this.gameIsOver = true;
 
     // Hide game screen
     this.gameScreen.style.display = "none";
-
-    //Show the final score
-    document.getElementById("final-score").textContent = this.score;
 
     // Show end game screen
     this.gameEndScreen.style.display = "block";
@@ -357,14 +357,14 @@ class Game {
     // Remove the hats from the screen
     this.hats.forEach((hat) => hat.element.remove());
 
+    //Show the final score
+    document.getElementById("victory-score").textContent = this.score;
+
     // cancel the execution of gameLoop()
     this.gameIsOver = true;
 
     // Hide game screen
     this.gameScreen.style.display = "none";
-
-    //Show the final score
-    document.getElementById("final-score").textContent = this.score;
 
     // Show game victory screen
     this.gameVictoryScreen.style.display = "block";
@@ -499,7 +499,7 @@ class Obstacle {
     this.gameScreen = gameScreen;
 
     // Summon the obstacle on the x axis
-    this.right = Math.floor(Math.random() * 500 + 30);
+    this.right = Math.floor(Math.random() * 920 + 30);
 
     // Summon the obstacle on the y axis
     this.top = 0;
@@ -525,10 +525,10 @@ class Obstacle {
   }
 
   move() {
-    // Move the obstacle left by 3px => the obstacles go from right to left faster
+    // Move the obstacle left by 6px => the obstacles go from right to left faster
     this.right += 3;
-    // Move the obstacle down by 10px => the obstacles go from top to bottom faster
-    this.top += 5;
+    // Move the obstacle down by 6px => the obstacles go from top to bottom faster
+    this.top += 6;
     // Update the obstacle's position on the screen
     this.updatePosition();
   }
@@ -540,7 +540,7 @@ class ObstacleTwo {
     this.gameScreen = gameScreen;
 
     // Summon the obstacle on the x axis
-    this.right = Math.floor(Math.random() * 500 + 30);
+    this.right = Math.floor(Math.random() * 920 + 30);
 
     // Summon the obstacle on the y axis
     this.bottom = 0;
@@ -568,8 +568,8 @@ class ObstacleTwo {
   move() {
     // Move the obstacle left by 3px => the obstacles go from right to left faster
     this.right += 3;
-    // Move the obstacle down by 10px => the obstacles go from top to bottom faster
-    this.bottom += 5;
+    // Move the obstacle down by 6px => the obstacles go from top to bottom faster
+    this.bottom += 6;
     // Update the obstacle's position on the screen
     this.updatePosition();
   }
@@ -585,7 +585,7 @@ class Taco {
     this.right = 0;
 
     // Summon the taco on the y axis
-    this.top = Math.floor(Math.random() * 500 + 30);
+    this.top = Math.floor(Math.random() * 650 + 30);
 
     this.width = 118;
     this.height = 104;
@@ -609,7 +609,7 @@ class Taco {
 
   move() {
     // Move the taco left by 6px => the tacos go from right to left faster
-    this.right += 6;
+    this.right += 10;
     // Move the taco down by 0px => the tacos go from top to bottom faster
     this.top += 0;
     // Update the taco's position on the screen
@@ -623,9 +623,9 @@ class Hat {
   constructor(gameScreen) {
     this.gameScreen = gameScreen;
     // Summon the hat on the x axis
-    this.right = Math.floor(Math.random() * 1000);
+    this.right = Math.floor(Math.random() * 900 + 10);
     // Summon the hat on the y axis
-    this.top = Math.floor(Math.random() * 600);
+    this.top = Math.floor(Math.random() * 500 + 10);
     this.width = 118;
     this.height = 104;
     this.element = document.createElement("img");
@@ -646,7 +646,7 @@ class Hat {
 
   move() {
     // Move the hat left by 0px => the hats go from right to left faster
-    this.right += 0;
+    this.right += 1;
     // Move the hat down by 1px => the hats go from top to bottom faster
     this.top += 1;
     // Update the hats position on the screen

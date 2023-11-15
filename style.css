@@ -64,23 +64,6 @@ nav > h4 {
   height: 200px;
 }
 
-/* Rules */
-#rules {
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#rules > h2 {
-  padding: 3px;
-  margin-bottom: 0px;
-}
-
-#rules li {
-  padding: 4px;
-}
-
 /* Buttons */
 .buttons {
   display: flex;
@@ -101,12 +84,44 @@ button:hover {
   cursor: pointer;
   background-color: #01795e;
 }
+#start-button {
+  margin-bottom: 30px;
+}
+
+/* Story */
+
+#story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#story > h2 {
+  padding: 3px;
+  margin-bottom: 0px;
+}
+#story li {
+  padding: 4px;
+}
+
+/* Goals */
+#goals {
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#goals > h2 {
+  padding: 3px;
+  margin-bottom: 0px;
+}
+
+#goals li {
+  padding: 4px;
+}
 
 /* Game screens */
-#game-container {
-  display: flex;
-  justify-content: center;
-}
 
 #game-screen {
   position: relative;
@@ -114,10 +129,6 @@ button:hover {
   background-image: url(images/background-videogame4.jpeg);
   animation: slide 7s linear infinite;
   overflow: hidden;
-}
-
-#game-intro {
-  margin: 80px;
 }
 
 @keyframes slide {
@@ -138,7 +149,7 @@ button:hover {
   margin: 10px;
 }
 
-#final-score {
+.final-score {
   font-size: 48px;
   font-weight: 700;
   margin: 4px 0 12px;
@@ -149,7 +160,6 @@ button:hover {
   width: 100vw;
   padding: 180px;
   font-weight: 800;
-  background-size: cover;
   background-image: url(images/videogames-background6.jpeg);
   background-size: cover;
   text-align: center;
@@ -184,13 +194,15 @@ button:hover {
   justify-content: center;
 }
 
+/* Footer */
+
 footer {
   display: flex;
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.1);
+  justify-content: center;
 }
 
 footer > p,
 a {
-  margin-left: 5px;
   text-decoration: none;
 }
