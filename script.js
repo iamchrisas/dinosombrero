@@ -120,12 +120,12 @@ class Game {
   // }
 
   // Method to update the lives, score, hats and tacos
-  updateBackground() {
-    if (this.score >= 10) {
-      const gameScreen = document.getElementById('game-screen');
-      gameScreen.style.backgroundImage = './images/background-videogame5.jpeg';
-    }
-  }
+  // updateBackground() {
+  //   if (this.score >= 10) {
+  //     const gameScreen = document.getElementById('game-screen');
+  //     gameScreen.style.backgroundImage = './images/background-videogame5.jpeg';
+  //   }
+  // }
 
   update() {
     // Return the new position of the dino to update the game
