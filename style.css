@@ -2,12 +2,20 @@
   font-family: Inter, arial, sans-serif;
 }
 
+h1 {
+  font-family: "macula-shaded", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #039473;
+}
+
 body {
   margin: 0px;
 }
 
 /* Navbar */
 nav {
+  background-color: rgba(249, 250, 245, 0.50);
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -48,9 +56,20 @@ nav > h4 {
   font-weight: 100;
 }
 
+audio {
+  width: 250px;
+  justify-content: center;
+  margin: auto 0;
+  padding: 8px 24px;
+}
+
 #score-container {
   justify-content: end;
 }
+
+/* audio {
+  width: 24px;
+} */
 
 /* Dino */
 .dino {
@@ -106,7 +125,7 @@ button:hover {
 
 /* Goals */
 #goals {
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,11 +141,25 @@ button:hover {
 }
 
 /* Game screens */
+#game-intro {
+  width: 100vw;
+  background-size: cover;
+  padding: 32px 0;
+  background-image: url(./images/background-animated.gif);
+}
+
+#overlay-intro {
+  width: fit-content;
+  padding: 24px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: rgba(249, 250, 245, 0.50);
+}
 
 #game-screen {
   position: relative;
   background-size: cover;
-  background-image: url(images/background-videogame4.jpeg);
+  background-image: url(images/AdobeStock_340525454.jpeg);
   animation: slide 7s linear infinite;
   overflow: hidden;
 }
@@ -157,10 +190,9 @@ button:hover {
 
 #game-end {
   display: none;
-  width: 100vw;
   padding: 180px;
   font-weight: 800;
-  background-image: url(images/videogames-background6.jpeg);
+  background-image: url(images/AdobeStock_340525454.jpeg);
   background-size: cover;
   text-align: center;
 }
@@ -180,12 +212,11 @@ button:hover {
 
 #game-victory {
   display: none;
-  width: 100vw;
   padding: 180px;
   text-align: center;
   background-size: cover;
   justify-content: center;
-  background-image: url(images/video-game-backg.jpeg);
+  background-image: url(images/AdobeStock_340525454.jpeg);
 }
 
 #game-victory > h2 {

@@ -78,7 +78,7 @@ class Game {
       0,
       100,
       100,
-      "./images/dinosaur-character.png"
+      "./images/dino-character-blue.png"
     );
     this.width = 1500;
     this.height = 780;
@@ -111,6 +111,20 @@ class Game {
     this.update();
     // used to improve/better manage the rate of frames for the game animation
     window.requestAnimationFrame(() => this.gameLoop());
+  }
+
+  // changeGameBackground () {
+  //   const gameScreen = document.getElementById('game-screen');
+  //   gameScreen.style.backgroundImage = './images/background-videogame5.jpeg';
+
+  // }
+
+  // Method to update the lives, score, hats and tacos
+  updateBackground() {
+    if (this.score >= 10) {
+      const gameScreen = document.getElementById('game-screen');
+      gameScreen.style.backgroundImage = './images/background-videogame5.jpeg';
+    }
   }
 
   update() {
@@ -268,6 +282,8 @@ class Game {
         }
       }
     }
+    
+    // this.updatePlayerValue();
 
     // Create a new obstacle based on a random probability
     // when there is less than 1 obstacle on the screen
