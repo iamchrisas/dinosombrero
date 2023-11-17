@@ -159,10 +159,10 @@ button:hover {
 #game-screen {
   position: relative;
   background-size: cover;
-  background-image: url(images/AdobeStock_340525454.jpeg);
+  /* background-image: url(images/AdobeStock_340525454.jpeg); */
   animation: slide 7s linear infinite;
   overflow: hidden;
-}
+} 
 
 @keyframes slide {
   0% {
@@ -192,7 +192,7 @@ button:hover {
   display: none;
   padding: 180px;
   font-weight: 800;
-  background-image: url(images/AdobeStock_340525454.jpeg);
+  background-image: url(images/background-animated.gif);
   background-size: cover;
   text-align: center;
 }
@@ -216,7 +216,7 @@ button:hover {
   text-align: center;
   background-size: cover;
   justify-content: center;
-  background-image: url(images/AdobeStock_340525454.jpeg);
+  background-image: url(images/background-animated.gif);
 }
 
 #game-victory > h2 {

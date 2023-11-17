@@ -16,6 +16,7 @@ window.onload = function () {
     location.reload();
   }
 
+
   function handleKeydown(event) {
     const key = event.key;
     const possibleKeystrokes = [
@@ -81,7 +82,7 @@ class Game {
       "./images/dino-character-blue.png"
     );
     this.width = 1500;
-    this.height = 780;
+    this.height = 680;
     // new Obstacle()
     this.obstacles = [];
     this.obstaclesTwo = [];
@@ -89,6 +90,7 @@ class Game {
     this.tacos = [];
     this.lives = 3;
     this.score = 0;
+    
     this.gameIsOver = false;
   }
 
@@ -109,23 +111,10 @@ class Game {
     }
     // update the game
     this.update();
+
     // used to improve/better manage the rate of frames for the game animation
     window.requestAnimationFrame(() => this.gameLoop());
   }
-
-  // changeGameBackground () {
-  //   const gameScreen = document.getElementById('game-screen');
-  //   gameScreen.style.backgroundImage = './images/background-videogame5.jpeg';
-
-  // }
-
-  // Method to update the lives, score, hats and tacos
-  // updateBackground() {
-  //   if (this.score >= 10) {
-  //     const gameScreen = document.getElementById('game-screen');
-  //     gameScreen.style.backgroundImage = './images/background-videogame5.jpeg';
-  //   }
-  // }
 
   update() {
     // Return the new position of the dino to update the game
@@ -254,11 +243,12 @@ class Game {
 
         // If the dino collides with a hat
         if (this.player.didCollide(hat)) {
+
+           // Remove hat object from the array
+           this.hats.splice(l, 1);
+           
           // Remove the hat element from the DOM
           hat.element.remove();
-
-          // Remove hat object from the array
-          this.hats.splice(l, 1);
 
           // Increase the hats by 1
           this.hats.length++;
@@ -271,18 +261,41 @@ class Game {
           // Update the counter variable to account for the removed hat
           l--;
         } else if (hat.top > this.height) {
-          // Remove the hat from the DOM
-          hat.element.remove();
-
           // Remove hat object from the array
           this.hats.splice(l, 1);
+
+          // Remove the hat from the DOM
+          hat.element.remove();
 
           // Update the counter variable to account for the removed hat
           l--;
         }
       }
-    }
+
+        // this function updates the background
+      // Get the game screen element
     
+    const gameScreen = document.getElementById("game-screen");
+    const numbersOfHats = document.getElementById("hats");
+
+    if (numbersOfHats.textContent > 10 && numbersOfHats.textContent < 20) {
+      gameScreen.style.backgroundImage = 'url("images/Bg-castle.jpeg")';
+
+    } else if (numbersOfHats.textContent > 19 && numbersOfHats.textContent < 30 ) {
+      gameScreen.style.backgroundImage = 'url("images/Bg-city.jpeg")';
+
+    } else if (numbersOfHats.textContent > 29 && numbersOfHats.textContent < 40) {
+      gameScreen.style.backgroundImage = 'url("images/Bg-sand.jpeg")';
+
+    } else if (numbersOfHats.textContent > 39 && numbersOfHats.textContent < 51) {
+      gameScreen.style.backgroundImage = 'url("images/Bg-woods.jpeg")';
+
+    } else {
+      gameScreen.style.backgroundImage = 'url("images/Bg-clouds.jpeg")';
+    }
+
+  }
+   
     // this.updatePlayerValue();
 
     // Create a new obstacle based on a random probability
@@ -366,7 +379,7 @@ class Game {
 
     // remove the obstaclesTwo from the screen
     this.obstaclesTwo.forEach((obstacleTwo) => obstacleTwo.element.remove());
-
+ 
     // remove the tacos from the screen
     this.tacos.forEach((taco) => taco.element.remove());
 
