@@ -16,7 +16,6 @@ window.onload = function () {
     location.reload();
   }
 
-
   function handleKeydown(event) {
     const key = event.key;
     const possibleKeystrokes = [
@@ -82,7 +81,7 @@ class Game {
       "./images/dino-character-blue.png"
     );
     this.width = 1500;
-    this.height = 680;
+    this.height = 780;
     // new Obstacle()
     this.obstacles = [];
     this.obstaclesTwo = [];
@@ -90,7 +89,7 @@ class Game {
     this.tacos = [];
     this.lives = 3;
     this.score = 0;
-    
+
     this.gameIsOver = false;
   }
 
@@ -128,6 +127,7 @@ class Game {
 
         // If the dino collides with an obstacle
         if (this.player.didCollide(obstacle)) {
+          document.getElementById("collide-sound").play();
           // Remove the obstacle element from the DOM
           obstacle.element.remove();
 
@@ -165,6 +165,9 @@ class Game {
 
         // If the dino collides with an obstacle
         if (this.player.didCollide(obstacleTwo)) {
+          //Add sound for the obstacle collision
+          document.getElementById("collide-sound").play();
+
           // Remove the obstacle element from the DOM
           obstacleTwo.element.remove();
 
@@ -243,10 +246,9 @@ class Game {
 
         // If the dino collides with a hat
         if (this.player.didCollide(hat)) {
+          // Remove hat object from the array
+          this.hats.splice(l, 1);
 
-           // Remove hat object from the array
-           this.hats.splice(l, 1);
-           
           // Remove the hat element from the DOM
           hat.element.remove();
 
@@ -272,30 +274,41 @@ class Game {
         }
       }
 
-        // this function updates the background
+      // this if statement updates the background
       // Get the game screen element
-    
-    const gameScreen = document.getElementById("game-screen");
-    const numbersOfHats = document.getElementById("hats");
 
-    if (numbersOfHats.textContent > 10 && numbersOfHats.textContent < 20) {
-      gameScreen.style.backgroundImage = 'url("images/Bg-castle.jpeg")';
+      const gameScreen = document.getElementById("game-screen");
+      const numbersOfHats = document.getElementById("hats");
 
-    } else if (numbersOfHats.textContent > 19 && numbersOfHats.textContent < 30 ) {
-      gameScreen.style.backgroundImage = 'url("images/Bg-city.jpeg")';
+      if (numbersOfHats.textContent == 10) {
+        //Add sound
+        document.getElementById("dino-roar").play();
 
-    } else if (numbersOfHats.textContent > 29 && numbersOfHats.textContent < 40) {
-      gameScreen.style.backgroundImage = 'url("images/Bg-sand.jpeg")';
+        //Change background
+        gameScreen.style.backgroundImage = 'url("images/Bg-castle.jpeg")';
+      } else if (numbersOfHats.textContent == 19) {
+        //Add sound
+        document.getElementById("dino-roar").play();
 
-    } else if (numbersOfHats.textContent > 39 && numbersOfHats.textContent < 51) {
-      gameScreen.style.backgroundImage = 'url("images/Bg-woods.jpeg")';
+        //Change background
+        gameScreen.style.backgroundImage = 'url("images/Bg-city.jpeg")';
+      } else if (numbersOfHats.textContent == 29) {
+        //Add sound
+        document.getElementById("dino-roar").play();
 
-    } else {
-      gameScreen.style.backgroundImage = 'url("images/Bg-clouds.jpeg")';
+        //Change background
+        gameScreen.style.backgroundImage = 'url("images/Bg-sand.jpeg")';
+      } else if (numbersOfHats.textContent == 39) {
+        //Add sound
+        document.getElementById("dino-roar").play();
+
+        //Change background
+        gameScreen.style.backgroundImage = 'url("images/Bg-woods.jpeg")';
+      } else {
+        gameScreen.style.backgroundImage = 'url("images/Bg-clouds.jpeg")';
+      }
     }
 
-  }
-   
     // this.updatePlayerValue();
 
     // Create a new obstacle based on a random probability
@@ -367,6 +380,9 @@ class Game {
 
     // Show end game screen
     this.gameEndScreen.style.display = "block";
+
+    //Add sounds
+    document.getElementById("sound-of-defeat").play();
   }
 
   // Create a new method for when the player won
@@ -379,7 +395,7 @@ class Game {
 
     // remove the obstaclesTwo from the screen
     this.obstaclesTwo.forEach((obstacleTwo) => obstacleTwo.element.remove());
- 
+
     // remove the tacos from the screen
     this.tacos.forEach((taco) => taco.element.remove());
 
@@ -397,6 +413,9 @@ class Game {
 
     // Show game victory screen
     this.gameVictoryScreen.style.display = "block";
+
+    //Add sounds
+    document.getElementById("sound-of-victory").play();
   }
 }
 

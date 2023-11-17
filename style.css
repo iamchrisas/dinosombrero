@@ -15,7 +15,7 @@ body {
 
 /* Navbar */
 nav {
-  background-color: rgba(249, 250, 245, 0.50);
+  background-color: rgba(249, 250, 245, 0.5);
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -153,16 +153,16 @@ button:hover {
   padding: 24px;
   margin: 0 auto;
   border-radius: 8px;
-  background-color: rgba(249, 250, 245, 0.50);
+  background-color: rgba(249, 250, 245, 0.5);
 }
 
 #game-screen {
   position: relative;
   background-size: cover;
-  /* background-image: url(images/AdobeStock_340525454.jpeg); */
+  background-image: url(images/Bg-clouds.jpeg);
   animation: slide 7s linear infinite;
   overflow: hidden;
-} 
+}
 
 @keyframes slide {
   0% {

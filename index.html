@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=(), user-id=()" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://use.typekit.net/oen8hdv.css">
     <title>Dino Sombrero</title>
@@ -34,7 +35,7 @@
         </div>
         <h1>DINO SOMBRERO</h1>
         <div>
-          <!-- <audio src="./audio/POL-mad-run-short.wav" controls autoplay loop></audio> -->
+          <audio src="./audio/gameintro.wav" controls autoplay loop></audio>
           <!-- score container -->
           <div class="status-icon" id="score-container">
            <h3>Score</h3>
@@ -58,17 +59,17 @@
             <h2>Story</h2>
             <ul>
               <li>Once upon a time</li>
-              <li>Once upon a time</li>
-              <li>Once upon a time</li>
-              <li>Once upon a time</li>
-              <li>Once upon a time</li>
+              <li>Dinobot discovered an artefact that allows him to time travel</li>
+              <li>It consumes 50 hats of energy</li>
+              <li>He needs to get them to continue his journey</li>
+              <li>He eats tacos to survive the shock with meteors</li>
             </ul>
           </div>
           <div id="goals">
             <h2>Goals</h2>
             <ol>
               <li>Use the arrow keys to move</li>
-              <li>Avoid meteors and eat tacos to survive </li>
+              <li>Avoid meteors and eat tacos</li>
               <li>Collect 50 hats to win</li>
             </ol>
           </div>
@@ -78,10 +79,15 @@
     <!-- #game-screen is set to active when the start game button is clicked -->
     <div id="game-container">
        <!-- #game-screen is initially hidden using CSS style display: none -->
-      <div id="game-screen"></div>
+      <div id="game-screen">
+        <audio id="dino-roar" src="./audio/dino-roar.wav"></audio>
+        <audio id="collide-sound" src="./audio/meteor-collision.wav"></audio>
+
+      </div>
       <!-- #game-end screen load when the player lose -->
       <div id="game-end">
         <div class="game-end-picture">
+          <audio id="sound-of-defeat" src="./audio/game-over.wav"></audio>
           <img src="./images/dino-game-over.jpeg" alt="dino-game-over">
             <p class="warcry">BOOOOOOOH</p>
               <p class="warcry">You lost</p>
@@ -94,6 +100,7 @@
       <!-- #game-victory screen load  when the player win -->
       <div id="game-victory">
         <div class="game-end-picture">
+          <audio id="sound-of-victory" src="./audio/game-victory.wav"></audio>
           <img src="./images/dino-game-over.jpeg" alt="dino-game-over">
             <p class="warcry">WUJUUUU!</p>
               <p class="warcry">You won, you collected 50 hats</p>

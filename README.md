@@ -2,11 +2,11 @@
 
 ## Summary
 
-This Dino need your help because he:
-
-- loves hats and tacos
-- hates meteors
-- is flying for his life
+- Once upon a time
+- Dinobot discovered an artefact that allows him to time travel
+- It consumes 50 hats of energy
+- He needs to get them to continue his journey
+- He eats tacos to survive the shock with meteors
 
 1. Use the arrow keys to move
 2. Avoid meteors and eat tacos to survive
