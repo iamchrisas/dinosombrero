@@ -102,6 +102,15 @@ button:hover {
   margin-bottom: 30px;
 }
 
+#demo-button {
+  color: #039473;
+  background: #fff;
+}
+
+#demo-button:hover {
+  background: #039473;
+  color: #fff;
+}
 /* Story */
 
 #story {
