@@ -10,7 +10,7 @@
 
 1. Use the arrow keys to move
 2. Avoid meteors and eat tacos to survive
-3. Collect 50 hats to win
+3. Collect at least 50 hats to win
 
 Have fun: https://iamchrisas.github.io/dinosombrero/
 

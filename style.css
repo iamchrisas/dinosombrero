@@ -15,7 +15,6 @@ body {
 
 /* Navbar */
 nav {
-  background-color: rgba(249, 250, 245, 0.5);
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -67,10 +66,6 @@ audio {
   justify-content: end;
 }
 
-/* audio {
-  width: 24px;
-} */
-
 /* Dino */
 .dino {
   display: flex;
@@ -94,8 +89,8 @@ button {
   color: #fff;
   border-radius: 4px;
   background: #039473;
-  font-size: 12px;
-  padding: 12px 32px;
+  font-size: 14px;
+  padding: 14px 34px;
   font-weight: bold;
 }
 
@@ -121,11 +116,12 @@ button:hover {
 }
 #story li {
   padding: 4px;
+  font-weight: 600;
+  font-size: larger;
 }
 
 /* Goals */
 #goals {
-  /* margin-bottom: 70px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,10 +130,14 @@ button:hover {
 #goals > h2 {
   padding: 3px;
   margin-bottom: 0px;
+  color: rgb(251, 248, 236);
 }
 
 #goals li {
   padding: 4px;
+  font-weight: 700;
+  font-size: larger;
+  color: rgb(251, 248, 236);
 }
 
 /* Game screens */
@@ -152,14 +152,16 @@ button:hover {
   width: fit-content;
   padding: 24px;
   margin: 0 auto;
-  border-radius: 8px;
-  background-color: rgba(249, 250, 245, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(4.6px);
 }
 
 #game-screen {
   position: relative;
   background-size: cover;
-  background-image: url(images/Bg-clouds.jpeg);
+  /* background-image: url(images/Bg-clouds.jpeg);*/
   animation: slide 7s linear infinite;
   overflow: hidden;
 }
@@ -203,11 +205,13 @@ button:hover {
 }
 
 .game-end-picture {
-  background-color: white;
-  color: black;
   margin: 0 auto;
   padding: 24px;
   width: 750px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 #game-victory {
@@ -217,12 +221,10 @@ button:hover {
   background-size: cover;
   justify-content: center;
   background-image: url(images/background-animated.gif);
-}
-
-#game-victory > h2 {
-  color: #fff;
-  display: flex;
-  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* Footer */

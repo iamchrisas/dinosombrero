@@ -127,6 +127,7 @@ class Game {
 
         // If the dino collides with an obstacle
         if (this.player.didCollide(obstacle)) {
+          //Add sound for the obstacle collision
           document.getElementById("collide-sound").play();
           // Remove the obstacle element from the DOM
           obstacle.element.remove();
@@ -205,6 +206,8 @@ class Game {
 
         // If the dino collides with a taco
         if (this.player.didCollide(taco)) {
+          //Add sound for the obstacle collision
+          document.getElementById("dino-roar").play();
           // Remove the taco element from the DOM
           taco.element.remove();
 
@@ -280,36 +283,27 @@ class Game {
       const gameScreen = document.getElementById("game-screen");
       const numbersOfHats = document.getElementById("hats");
 
-      if (numbersOfHats.textContent == 10) {
-        //Add sound
-        document.getElementById("dino-roar").play();
-
-        //Change background
+      if (numbersOfHats.textContent >= 10 && numbersOfHats.textContent < 19) {
         gameScreen.style.backgroundImage = 'url("images/Bg-castle.jpeg")';
-      } else if (numbersOfHats.textContent == 19) {
-        //Add sound
-        document.getElementById("dino-roar").play();
-
-        //Change background
+      } else if (
+        numbersOfHats.textContent >= 19 &&
+        numbersOfHats.textContent < 29
+      ) {
         gameScreen.style.backgroundImage = 'url("images/Bg-city.jpeg")';
-      } else if (numbersOfHats.textContent == 29) {
-        //Add sound
-        document.getElementById("dino-roar").play();
-
-        //Change background
+      } else if (
+        numbersOfHats.textContent >= 29 &&
+        numbersOfHats.textContent < 39
+      ) {
         gameScreen.style.backgroundImage = 'url("images/Bg-sand.jpeg")';
-      } else if (numbersOfHats.textContent == 39) {
-        //Add sound
-        document.getElementById("dino-roar").play();
-
-        //Change background
+      } else if (
+        numbersOfHats.textContent >= 39 &&
+        numbersOfHats.textContent < 100
+      ) {
         gameScreen.style.backgroundImage = 'url("images/Bg-woods.jpeg")';
       } else {
         gameScreen.style.backgroundImage = 'url("images/Bg-clouds.jpeg")';
       }
     }
-
-    // this.updatePlayerValue();
 
     // Create a new obstacle based on a random probability
     // when there is less than 1 obstacle on the screen
@@ -573,7 +567,7 @@ class Obstacle {
   }
 
   move() {
-    // Move the obstacle left by 6px => the obstacles go from right to left faster
+    // Move the obstacle left by 3px => the obstacles go from right to left faster
     this.right += 3;
     // Move the obstacle down by 6px => the obstacles go from top to bottom faster
     this.top += 6;
@@ -656,7 +650,7 @@ class Taco {
   }
 
   move() {
-    // Move the taco left by 6px => the tacos go from right to left faster
+    // Move the taco left by 10px => the tacos go from right to left faster
     this.right += 10;
     // Move the taco down by 0px => the tacos go from top to bottom faster
     this.top += 0;
@@ -693,7 +687,7 @@ class Hat {
   }
 
   move() {
-    // Move the hat left by 0px => the hats go from right to left faster
+    // Move the hat left by 1px => the hats go from right to left faster
     this.right += 1;
     // Move the hat down by 1px => the hats go from top to bottom faster
     this.top += 1;
