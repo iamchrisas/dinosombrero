@@ -155,13 +155,13 @@ button:hover {
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 #game-screen {
   position: relative;
   background-size: cover;
-  /* background-image: url(images/Bg-clouds.jpeg);*/
+  background-image: url(images/Bg-clouds.webp);
   animation: slide 7s linear infinite;
   overflow: hidden;
 }
@@ -208,9 +208,8 @@ button:hover {
   margin: 0 auto;
   padding: 24px;
   width: 750px;
-  border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.6px);
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
@@ -221,9 +220,8 @@ button:hover {
   background-size: cover;
   justify-content: center;
   background-image: url(images/background-animated.gif);
-  border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.6px);
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 

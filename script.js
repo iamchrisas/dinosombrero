@@ -78,7 +78,7 @@ class Game {
       0,
       100,
       100,
-      "./images/dino-character-blue.png"
+      "./images/dino-character-blue.webp"
     );
     this.width = 1500;
     this.height = 780;
@@ -284,24 +284,24 @@ class Game {
       const numbersOfHats = document.getElementById("hats");
 
       if (numbersOfHats.textContent >= 10 && numbersOfHats.textContent < 19) {
-        gameScreen.style.backgroundImage = 'url("images/Bg-castle.jpeg")';
+        gameScreen.style.backgroundImage = 'url("images/Bg-castle.webp")';
       } else if (
         numbersOfHats.textContent >= 19 &&
         numbersOfHats.textContent < 29
       ) {
-        gameScreen.style.backgroundImage = 'url("images/Bg-city.jpeg")';
+        gameScreen.style.backgroundImage = 'url("images/Bg-city.webp")';
       } else if (
         numbersOfHats.textContent >= 29 &&
         numbersOfHats.textContent < 39
       ) {
-        gameScreen.style.backgroundImage = 'url("images/Bg-sand.jpeg")';
+        gameScreen.style.backgroundImage = 'url("images/Bg-sand.webp")';
       } else if (
         numbersOfHats.textContent >= 39 &&
         numbersOfHats.textContent < 100
       ) {
-        gameScreen.style.backgroundImage = 'url("images/Bg-woods.jpeg")';
+        gameScreen.style.backgroundImage = 'url("images/Bg-woods.webp")';
       } else {
-        gameScreen.style.backgroundImage = 'url("images/Bg-clouds.jpeg")';
+        gameScreen.style.backgroundImage = 'url("images/Bg-clouds.webp")';
       }
     }
 
@@ -341,7 +341,7 @@ class Game {
     }
 
     // The player won
-    if (this.hats.length > 50 && this.lives > 0) {
+    if (this.hats.length == 53 && this.lives > 0) {
       this.gameVictory();
     }
   }
@@ -550,7 +550,7 @@ class Obstacle {
     this.height = 100;
     this.element = document.createElement("img");
 
-    this.element.src = "images/meteorite.png";
+    this.element.src = "images/meteorite.webp";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -591,7 +591,7 @@ class ObstacleTwo {
     this.height = 100;
     this.element = document.createElement("img");
 
-    this.element.src = "images/meteoriteTwo copy.png";
+    this.element.src = "images/meteoriteTwo.webp";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -633,7 +633,7 @@ class Taco {
     this.height = 104;
     this.element = document.createElement("img");
 
-    this.element.src = "images/Taco.png";
+    this.element.src = "images/Taco.webp";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -671,7 +671,7 @@ class Hat {
     this.width = 118;
     this.height = 104;
     this.element = document.createElement("img");
-    this.element.src = "images/Sombrero.png";
+    this.element.src = "images/Sombrero.webp";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
