@@ -3,10 +3,10 @@
 }
 
 h1 {
-  font-family: "macula-shaded", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+  font-family: "macula-line", sans-serif;
+  font-weight: 400;
   color: #039473;
+  font-style: normal;
 }
 
 body {
